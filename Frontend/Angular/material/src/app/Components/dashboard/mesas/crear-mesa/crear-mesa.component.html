@@ -1,0 +1,33 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Crear Mesas</span>
+        <div class="example-spacer"></div>
+    </mat-toolbar>
+    <mat-card style="margin-top: 10px;">
+        <form [formGroup]="form " (ngSubmit)="agregarMesa()">
+            <mat-grid-list cols="2" rowHeight="70px">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Numero de mesas </mat-label>
+                        <input matInput autocomplete="off" formControlName="numero">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="3">
+                    <img src="./assets/img/Votacion2.png" width="300" height="300">
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Numero de inscritos </mat-label>
+                        <input matInput autocomplete="off" formControlName="cantidad_inscritos">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <button mat-raised-button style="margin-right: 20px;">Volver</button>
+                    <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">Aceptar</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+
+        </form>
+    </mat-card>
+</div>

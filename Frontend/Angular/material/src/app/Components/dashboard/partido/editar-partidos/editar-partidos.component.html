@@ -1,0 +1,38 @@
+
+<div class="container">
+    <mat-toolbar>
+        <span>Editar Partido</span>
+        <div class="example-spacer"></div>
+    </mat-toolbar>
+    <mat-card style="margin-top: 10px;">
+        <form [formGroup]="form" (ngSubmit)="editarPartido()">
+            <mat-grid-list cols="3" rowHeight="70px">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Id</mat-label>
+                        <input matInput autocomplete="off" formControlName="_id">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Nombre Del Partido</mat-label>
+                        <input matInput autocomplete="off" formControlName="nombre">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="3">
+                    <img src="./assets/img/Partido.webp" width="200" height="200">
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Lema</mat-label>
+                        <input matInput autocomplete="off" formControlName="lema">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <button mat-raised-button style="margin-right: 20px;" >Volver</button>
+                    <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">Guardar Cambios</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Crear Partido</span>
+        <div class="example-spacer"></div>
+    </mat-toolbar>
+    <mat-card style="margin-top: 10px;">
+        <form [formGroup]="form" (ngSubmit)="agregarPartido()">
+            <mat-grid-list cols="4" rowHeight="70px">
+                
+            
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Nombre de Partido</mat-label>
+                            <input matInput autocomplete="off" formControlName="nombre">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="3" [rowspan]="6">
+                    <img src="./assets/img/Partido.webp" width="250" height="250">
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Lema</mat-label>
+                        <input matInput autocomplete="off" formControlName="lema">
+                    </mat-form-field>
+                </mat-grid-tile>
+                
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <button mat-raised-button style="margin-right: 20px;">Volver</button>
+                    <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">Aceptar</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div>

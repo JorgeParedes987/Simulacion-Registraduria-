@@ -1,0 +1,12 @@
+.biografia-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .biografia-container img {
+    width: 100%;
+    max-width: 200px; /* Puedes ajustar el tamaño máximo según tus necesidades */
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }

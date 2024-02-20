@@ -1,0 +1,29 @@
+[
+    {
+        "nombre":"Menu",
+        "redirect":"/dashboard"
+    }
+    ,
+    {
+        "nombre":"Mesas",
+        "redirect":"/dashboard/mesas" 
+    }
+    ,
+    {
+        "nombre": "Candidatos",
+        "redirect": "/dashboard/candidatos"
+    }
+    ,
+    {
+        "nombre": "Resultados",
+        "redirect": "/dashboard/resultado"
+    }
+    ,
+    {
+        "nombre": "Partidos",
+        "redirect": "/dashboard/partido"
+    }
+
+
+
+]

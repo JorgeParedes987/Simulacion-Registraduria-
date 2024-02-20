@@ -1,0 +1,54 @@
+<div class="container">
+  <mat-toolbar>
+      <span>Mesas</span>
+      <div class="example-spacer"></div>
+      <button mat-raised-button color="primary" routerLink="/dashboard/crear-mesa">AGREGAR</button>
+    </mat-toolbar>
+    <div *ngIf="listMesa.length">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="" #input autocomplete="off">
+      </mat-form-field>
+      <div class="mat-elevation-z5">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+                  <ng-container matColumnDef="_id"> <!--mat-sort-header es para ordenar -->
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+                  </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="numero"> <!--mat-sort-header es para ordenar -->
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Numero </th>
+              <td mat-cell *matCellDef="let element"> {{element.numero}} </td>
+            </ng-container>
+             <!-- Name Column -->
+             <ng-container matColumnDef="cantidad_inscritos">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header > Cantidad de inscritos </th>
+                <td mat-cell *matCellDef="let element"> {{element.cantidad_inscritos}} </td>
+            </ng-container>
+         <!-- Name Column -->
+         <ng-container matColumnDef="Acciones">
+            <th mat-header-cell *matHeaderCellDef>  </th>
+            <td mat-cell *matCellDef="let element; let i = index" style="text-align: right;"> 
+          
+            <a class="cursor"  (click)="editarMesa()" style="color: #1f56f1;"  matTooltip="Editar Mesa">
+                <mat-icon>edit</mat-icon>
+            </a> 
+            <a class="cursor" (click)="eliminarMesa(i)" style="color: #e15639;" matTooltip="Eliminar Mesa">
+                <mat-icon>delete</mat-icon>
+            </a> 
+            </td>
+        </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+    
+    </div>
+   <h2 *ngIf="listMesa.length== 0">No hay registro para mostrar</h2>
+  </div>

@@ -1,0 +1,43 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Crear Resultado</span>
+        <div class="example-spacer"></div>
+      </mat-toolbar>
+    <mat-card style="margin-top: 10px;">
+        <form [formGroup]="form" (ngSubmit)="agregarResultado()">
+            <mat-grid-list cols="4" rowHeight="70px">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>IdResultado</mat-label>
+                        <input matInput autocomplete="off" formControlName="idResultado">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="3" [rowspan]="6">
+                    <img src="./assets/img/perrito.jpg" width="250" height="250">
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>IdPartido</mat-label>
+                        <input matInput autocomplete="off" formControlName="IdPartido">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Numero de mesa</mat-label>
+                        <input matInput autocomplete="off" formControlName="numeroMesa">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>IdCandidato</mat-label>
+                        <input matInput autocomplete="off" formControlName="idCandidato">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <button mat-raised-button style="margin-right: 20px;">Volver</button>
+                    <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">Aceptar</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div> 

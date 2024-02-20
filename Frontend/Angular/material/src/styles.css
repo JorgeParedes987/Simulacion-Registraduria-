@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 5px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .footer {
+    background-color: #0055b6;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .left, .center, .right {
+    flex: 1;
+    text-align: center;
+  }
+  
+  
